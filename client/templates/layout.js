@@ -1,3 +1,10 @@
+// Check if Staff
+Template.registerHelper('isStaff', function() {
+	if (Meteor.user().profile.usertype == 'staff') {
+		return true;
+	}
+});
+
 // Format The Date Using Moment.js
 Template.registerHelper('formatDate', function (date) {
     return moment(date).format('MMM Do YYYY, h:mm a');
